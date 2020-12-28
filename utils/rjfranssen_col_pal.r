@@ -13,7 +13,7 @@ rjfranssen_colors <- c(
   `light_sea_green` = "#36B4AF",
   `pewter` = "#D3DADA",
   `carafe` = "#55423A",
-  `dark goldenrod` = "#F1B416",
+  `goldenrod` = "#F1B416",
   `burnt_sienna` = "#E56A19",
   `crimson` = "#900000")
   
