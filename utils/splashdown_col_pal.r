@@ -6,7 +6,7 @@ library(scales)
 library(dplyr)
 
 # define colors
-rjfranssen_colors <- c(
+splashdown_colors <- c(
   `ebony` = "#1E2225",
   `blue_grotto` = "#05263B",
   `charcoal` = "#43758A",
@@ -18,28 +18,28 @@ rjfranssen_colors <- c(
   `crimson` = "#900000")
   
   # function to extract colors
-  rjfranssen_cols <- function(...) {
+  splashdown_cols <- function(...) {
   cols <- c(...)
 
   if (is.null(cols))
-    return (rjfranssen_colors)
+    return (splashdown_colors)
 
-  rjfranssen_colors[cols]
+  splashdown_colors[cols]
 }
 
 # define palettes
-rjfranssen_palettes <- list(
+splashdown_palettes <- list(
   
-  `primary`  = rjfranssen_cols("ebony", "blue_grotto", "charcoal", "light_sea_green", "pewter"),
+  `primary`  = splashdown_cols("ebony", "blue_grotto", "charcoal", "light_sea_green", "pewter"),
 
-  `secondary`  = rjfranssen_cols("carafe", "goldenrod", "burnt_sienna", "crimson"),
+  `secondary`  = splashdown_cols("carafe", "goldenrod", "burnt_sienna", "crimson"),
 
-  `all`   = rjfranssen_cols("ebony", "blue_grotto", "charcoal", "light_sea_green", "pewter", "carafe", "goldenrod", "burnt_sienna", "crimson")
+  `all`   = splashdown_cols("ebony", "blue_grotto", "charcoal", "light_sea_green", "pewter", "carafe", "goldenrod", "burnt_sienna", "crimson")
 )
 
 # function to interpolate palettes
-rjfranssen_pal <- function(palette = "main", reverse = FALSE, ...) {
-  pal <- rjfranssen_palettes[[palette]]
+splashdown_pal <- function(palette = "main", reverse = FALSE, ...) {
+  pal <- splashdown_palettes[[palette]]
 
   if (reverse) pal <- rev(pal)
 
@@ -51,20 +51,20 @@ scale_color_rjfranssen <- function(palette = "main",
            discrete = TRUE,
            reverse = FALSE,
            ...) {
-    pal <- rjfranssen_pal(palette = palette, reverse = reverse)
+    pal <- splashdown_pal(palette = palette, reverse = reverse)
     
     if (discrete) {
-      discrete_scale("colour", paste0("rjfranssen_", palette), palette = pal, ...)
+      discrete_scale("colour", paste0("splashdown_", palette), palette = pal, ...)
     } else {
       scale_color_gradientn(colours = pal(256), ...)
     }
 }
 
 scale_fill_rjfranssen <- function(palette = "main", discrete = TRUE, reverse = FALSE, ...) {
-  pal <- rjfranssen_pal(palette = palette, reverse = reverse)
+  pal <- splashdown_pal(palette = palette, reverse = reverse)
 
   if (discrete) {
-    discrete_scale("fill", paste0("rjfranssen_", palette), palette = pal, ...)
+    discrete_scale("fill", paste0("splashdown_", palette), palette = pal, ...)
   } else {
     scale_fill_gradientn(colours = pal(256), ...)
   }
