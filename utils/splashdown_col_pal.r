@@ -47,7 +47,7 @@ splashdown_pal <- function(palette = "main", reverse = FALSE, ...) {
 }
 
 # scale() functions for ggplot2
-scale_color_rjfranssen <- function(palette = "main",
+scale_color_splashdown <- function(palette = "main",
            discrete = TRUE,
            reverse = FALSE,
            ...) {
@@ -60,7 +60,7 @@ scale_color_rjfranssen <- function(palette = "main",
     }
 }
 
-scale_fill_rjfranssen <- function(palette = "main", discrete = TRUE, reverse = FALSE, ...) {
+scale_fill_splashdown <- function(palette = "main", discrete = TRUE, reverse = FALSE, ...) {
   pal <- splashdown_pal(palette = palette, reverse = reverse)
 
   if (discrete) {
@@ -74,15 +74,15 @@ scale_fill_rjfranssen <- function(palette = "main", discrete = TRUE, reverse = F
 
 #ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Sepal.Length)) +
 #    geom_point(size = 4, alpha = .6) +
-#    scale_color_rjfranssen(discrete = FALSE, palette = "primary")
+#    scale_color_splashdown(discrete = FALSE, palette = "primary")
 
 #ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Species)) +
 #    geom_point(size = 4) +
-#    scale_color_rjfranssen("secondary")
+#    scale_color_splashdown("secondary")
 
 #ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
 #    geom_bar() +
 #    theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
-#    scale_fill_rjfranssen(palette = "all", guide = "none")
+#    scale_fill_splashdown(palette = "all", guide = "none")
 
 
